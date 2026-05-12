@@ -1461,11 +1461,14 @@ function HomeScreen({ currentUser, onEnterBook }) {
             </div>
           </div>
         ) : (
-          <button onClick={()=>setShowJoinBook(true)} style={{ ...actionBtn,background:"#EFF6FF",color:"#2563EB",width:"100%",marginTop:8,padding:"13px 16px",fontSize:15,border:"1.5px solid #BFDBFE" }}>🔗 加入記帳本（輸入邀請碼）</button>
+          <div style={{ display:"flex",gap:8,marginTop:8 }}>
+            <button onClick={()=>setShowJoinBook(true)} style={{ ...actionBtn,background:"#EFF6FF",color:"#2563EB",flex:1,padding:"13px 8px",fontSize:13,border:"1.5px solid #BFDBFE" }}>🔗 加入記帳本</button>
+            <button onClick={()=>setShowNew(true)} style={{ ...actionBtn,background:"#2563EB",color:"#fff",flex:1,padding:"13px 8px",fontSize:13 }}>＋ 建立新記帳本</button>
+          </div>
         )}
 
-        {!showNew
-          ? <button onClick={()=>setShowNew(true)} style={{ ...actionBtn,background:"#2563EB",color:"#fff",width:"100%",marginTop:8,padding:"13px 16px",fontSize:15 }}>＋ 建立新記帳本</button>
+        {false
+          ? <button onClick={()=>setShowNew(true)} style={{ display:"none" }}>＋ 建立新記帳本</button>
           : (
             <div style={{ background:"#fff",borderRadius:16,padding:18,marginTop:8,boxShadow:"0 2px 12px rgba(37,99,235,.09)" }}>
               <div style={{ fontWeight:800,fontSize:15,color:"#1E3A5F",marginBottom:12 }}>建立新記帳本</div>
